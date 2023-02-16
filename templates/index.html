@@ -72,10 +72,10 @@
                   name="gender"
                   value="F"
                   {{'checked' if form['gender'] == 'F' or not form}}
-                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer cursor-pointer"
                 />
                 <label
-                  class="text-slate-400 peer-checked:text-slate-300"
+                  class="text-slate-400 peer-checked:text-slate-300 cursor-pointer"
                   for="Female"
                   >Female</label
                 >
@@ -87,10 +87,10 @@
                   name="gender"
                   value="M"
                   {{'checked' if form['gender'] == 'M'}}
-                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer cursor-pointer"
                 />
                 <label
-                  class="text-slate-400 peer-checked:text-slate-300"
+                  class="text-slate-400 peer-checked:text-slate-300 cursor-pointer"
                   for="Male"
                   >Male</label
                 >
@@ -109,10 +109,10 @@
                   name="married"
                   value="1"
                   {{'checked' if form['married'] == '1'}}
-                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer cursor-pointer"
                 />
                 <label
-                  class="text-slate-400 peer-checked:text-slate-300"
+                  class="text-slate-400 peer-checked:text-slate-300 cursor-pointer"
                   for="married-yes"
                   >Yes</label
                 >
@@ -124,10 +124,10 @@
                   name="married"
                   value="0"
                   {{'checked' if form['married'] == '0' or not form}}
-                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer cursor-pointer"
                 />
                 <label
-                  class="text-slate-400 peer-checked:text-slate-300"
+                  class="text-slate-400 peer-checked:text-slate-300 cursor-pointer"
                   for="married-no"
                   >No</label
                 >
@@ -146,10 +146,10 @@
                   name="hypertension"
                   value="1"
                   {{'checked' if form['hypertension'] == '1'}}
-                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer cursor-pointer"
                 />
                 <label
-                  class="text-slate-400 peer-checked:text-slate-300"
+                  class="text-slate-400 peer-checked:text-slate-300 cursor-pointer"
                   for="hypertension-yes"
                   >Yes</label
                 >
@@ -161,10 +161,10 @@
                   name="hypertension"
                   value="0"
                   {{'checked' if form['hypertension'] == '0' or not form}}
-                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer cursor-pointer"
                 />
                 <label
-                  class="text-slate-400 peer-checked:text-slate-300"
+                  class="text-slate-400 peer-checked:text-slate-300 cursor-pointer"
                   for="hypertension-no"
                   >No</label
                 >
@@ -183,10 +183,10 @@
                   name="heart_disease"
                   value="1"
                   {{'checked' if form['heart_disease'] == '1'}}
-                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer cursor-pointer"
                 />
                 <label
-                  class="text-slate-400 peer-checked:text-slate-300"
+                  class="text-slate-400 peer-checked:text-slate-300 cursor-pointer"
                   for="heart_disease-yes"
                   >Yes</label
                 >
@@ -198,10 +198,10 @@
                   name="heart_disease"
                   value="0"
                   {{'checked' if form['heart_disease'] == '0' or not form}}
-                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer cursor-pointer"
                 />
                 <label
-                  class="text-slate-400 peer-checked:text-slate-300"
+                  class="text-slate-400 peer-checked:text-slate-300 cursor-pointer"
                   for="heart_disease-no"
                   >No</label
                 >
@@ -215,13 +215,13 @@
             <select
               id="work_type"
               name="work_type"
-              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg"
+              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg cursor-pointer"
             >
-              <option value="G" {{'selected' if form['work_type'] == 'G' or not form}}>Government job</option>
-              <option value="P" {{'selected' if form['work_type'] == 'P'}}>Private sector</option>
-              <option value="S" {{'selected' if form['work_type'] == 'S'}}>Self employed</option>
-              <option value="C" {{'selected' if form['work_type'] == 'C'}}>Work with children</option>
-              <option value="N" {{'selected' if form['work_type'] == 'N'}}>Not currently working</option>
+              <option value="G" {{'selected' if form['work_type'] == 'G' or not form}} class="cursor-pointer">Government job</option>
+              <option value="P" {{'selected' if form['work_type'] == 'P'}} class="cursor-pointer">Private sector</option>
+              <option value="S" {{'selected' if form['work_type'] == 'S'}} class="cursor-pointer">Self employed</option>
+              <option value="C" {{'selected' if form['work_type'] == 'C'}} class="cursor-pointer">Work with children</option>
+              <option value="N" {{'selected' if form['work_type'] == 'N'}} class="cursor-pointer">Not currently working</option>
             </select>
           </label>
           <label for="smoking_status">
@@ -229,11 +229,11 @@
             <select
               id="smoking_status"
               name="smoking_status"
-              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg"
+              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg cursor-pointer"
             >
-              <option value="N" {{'selected' if form['smoking_status'] == 'N' or not form}}>Never smoked at all</option>
-              <option value="F" {{'selected' if form['smoking_status'] == 'F'}}>Formerly smoked</option>
-              <option value="S" {{'selected' if form['smoking_status'] == 'S'}}>Currently smokes</option>
+              <option value="N" {{'selected' if form['smoking_status'] == 'N' or not form}} class="cursor-pointer">Never smoked at all</option>
+              <option value="F" {{'selected' if form['smoking_status'] == 'F'}} class="cursor-pointer">Formerly smoked</option>
+              <option value="S" {{'selected' if form['smoking_status'] == 'S'}} class="cursor-pointer">Currently smokes</option>
             </select>
           </label>
           <label for="residence_type">
@@ -241,15 +241,15 @@
             <select
               id="residence_type"
               name="residence_type"
-              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg"
+              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg cursor-pointer"
             >
-              <option value="U" {{'selected' if form['residence_type'] == 'U' or not form}}>Urban</option>
-              <option value="R" {{'selected' if form['residence_type'] == 'R'}}>Rural</option>
+              <option value="U" {{'selected' if form['residence_type'] == 'U' or not form}} class="cursor-pointer">Urban</option>
+              <option value="R" {{'selected' if form['residence_type'] == 'R'}} class="cursor-pointer">Rural</option>
             </select>
           </label>
           <button
             type="submit"
-            class="bg-slate-600 text-slate-200 hover:bg-slate-500 rounded-lg shadow-xl p-2 transition-[bg] duration-250 ease-in-out w-full"
+            class="bg-slate-600 text-slate-200 hover:bg-slate-500 rounded-lg shadow-xl p-2 transition-[bg] duration-250 ease-in-out w-full cursor-pointer"
           >
             Submit
           </button>
