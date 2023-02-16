@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stroke Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='output.css')}}"
+    />
+  </head>
+  <body class="bg-slate-900">
+    <nav class="bg-slate-800 p-6 fixed top-0 w-full z-10">
+      <h1 class="text-2xl text-slate-200 text-start md:text-3xl">
+        Stroke Prediction
+      </h1>
+    </nav>
+    <main class="container mx-auto p-6 relative top-20">
+      <div
+        class="bg-slate-700 w-full max-w-lg p-6 mx-auto rounded-lg shadow-lg mt-4"
+      >
+        <h2 class="text-xl text-slate-300 text-center md:text-start">
+          Predict your chances of getting stroke
+        </h2>
+        <form class="flex flex-col space-y-3 mt-3">
+          <label for="age">
+            <h3 class="text-slate-300 m-1">What is your age?</h3>
+            <input
+              id="age"
+              type="text"
+              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg"
+              placeholder="Age"
+              name="age"
+              value="{{form['age']}}"
+              required
+            />
+          </label>
+          <label for="bmi">
+            <h3 class="text-slate-300 m-1">What is your bmi?</h3>
+            <input
+              id="bmi"
+              type="text"
+              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg"
+              placeholder="BMI"
+              name="bmi"
+              value="{{form['bmi']}}"
+              required
+            />
+          </label>
+          <label for="avg_glucose_level">
+            <h3 class="text-slate-300 m-1">
+              What is your average glucose level?
+            </h3>
+            <input
+              id="avg_glucose_level"
+              type="text"
+              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg"
+              placeholder="Average glucose level"
+              name="avg_glucose_level"
+              value="{{form['avg_glucose_level']}}"
+              required
+            />
+          </label>
+          <div>
+            <h3 class="text-slate-300 m-1">What is your gender?</h3>
+            <div class="flex flex-col space-y-2 ml-1">
+              <div class="flex space-x-2 items-center">
+                <input
+                  id="Female"
+                  type="radio"
+                  name="gender"
+                  value="F"
+                  {{'checked' if form['gender'] == 'F' or not form}}
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                />
+                <label
+                  class="text-slate-400 peer-checked:text-slate-300"
+                  for="Female"
+                  >Female</label
+                >
+              </div>
+              <div class="flex space-x-2 items-center">
+                <input
+                  id="Male"
+                  type="radio"
+                  name="gender"
+                  value="M"
+                  {{'checked' if form['gender'] == 'M'}}
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                />
+                <label
+                  class="text-slate-400 peer-checked:text-slate-300"
+                  for="Male"
+                  >Male</label
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-slate-300 m-1">
+              Are you currently married or have been married before?
+            </h3>
+            <div class="flex flex-col space-y-2 ml-1">
+              <div class="flex space-x-2 items-center">
+                <input
+                  id="married-yes"
+                  type="radio"
+                  name="married"
+                  value="1"
+                  {{'checked' if form['married'] == '1'}}
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                />
+                <label
+                  class="text-slate-400 peer-checked:text-slate-300"
+                  for="married-yes"
+                  >Yes</label
+                >
+              </div>
+              <div class="flex space-x-2 items-center">
+                <input
+                  id="married-no"
+                  type="radio"
+                  name="married"
+                  value="0"
+                  {{'checked' if form['married'] == '0' or not form}}
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                />
+                <label
+                  class="text-slate-400 peer-checked:text-slate-300"
+                  for="married-no"
+                  >No</label
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-slate-300 m-1">
+              Do you currently have hypertension?
+            </h3>
+            <div class="flex flex-col space-y-2 ml-1">
+              <div class="flex space-x-2 items-center">
+                <input
+                  id="hypertension-yes"
+                  type="radio"
+                  name="hypertension"
+                  value="1"
+                  {{'checked' if form['hypertension'] == '1'}}
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                />
+                <label
+                  class="text-slate-400 peer-checked:text-slate-300"
+                  for="hypertension-yes"
+                  >Yes</label
+                >
+              </div>
+              <div class="flex space-x-2 items-center">
+                <input
+                  id="hypertension-no"
+                  type="radio"
+                  name="hypertension"
+                  value="0"
+                  {{'checked' if form['hypertension'] == '0' or not form}}
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                />
+                <label
+                  class="text-slate-400 peer-checked:text-slate-300"
+                  for="hypertension-no"
+                  >No</label
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-slate-300 m-1">
+              Do you currently have any heart diseases?
+            </h3>
+            <div class="flex flex-col space-y-2 ml-1">
+              <div class="flex space-x-2 items-center">
+                <input
+                  id="heart_disease-yes"
+                  type="radio"
+                  name="heart_disease"
+                  value="1"
+                  {{'checked' if form['heart_disease'] == '1'}}
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                />
+                <label
+                  class="text-slate-400 peer-checked:text-slate-300"
+                  for="heart_disease-yes"
+                  >Yes</label
+                >
+              </div>
+              <div class="flex space-x-2 items-center">
+                <input
+                  id="heart_disease-no"
+                  type="radio"
+                  name="heart_disease"
+                  value="0"
+                  {{'checked' if form['heart_disease'] == '0' or not form}}
+                  class="appearance-none w-3 aspect-square bg-slate-500 checked:bg-slate-300 rounded-full peer"
+                />
+                <label
+                  class="text-slate-400 peer-checked:text-slate-300"
+                  for="heart_disease-no"
+                  >No</label
+                >
+              </div>
+            </div>
+          </div>
+          <label for="work_type">
+            <h3 class="text-slate-300 m-1">
+              What sector do you work in currently?
+            </h3>
+            <select
+              id="work_type"
+              name="work_type"
+              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg"
+            >
+              <option value="G" {{'selected' if form['work_type'] == 'G' or not form}}>Government job</option>
+              <option value="P" {{'selected' if form['work_type'] == 'P'}}>Private sector</option>
+              <option value="S" {{'selected' if form['work_type'] == 'S'}}>Self employed</option>
+              <option value="C" {{'selected' if form['work_type'] == 'C'}}>Work with children</option>
+              <option value="N" {{'selected' if form['work_type'] == 'N'}}>Not currently working</option>
+            </select>
+          </label>
+          <label for="smoking_status">
+            <h3 class="text-slate-300 m-1">What is your smoking status?</h3>
+            <select
+              id="smoking_status"
+              name="smoking_status"
+              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg"
+            >
+              <option value="N" {{'selected' if form['smoking_status'] == 'N' or not form}}>Never smoked at all</option>
+              <option value="F" {{'selected' if form['smoking_status'] == 'F'}}>Formerly smoked</option>
+              <option value="S" {{'selected' if form['smoking_status'] == 'S'}}>Currently smokes</option>
+            </select>
+          </label>
+          <label for="residence_type">
+            <h3 class="text-slate-300 m-1">What is your residence type?</h3>
+            <select
+              id="residence_type"
+              name="residence_type"
+              class="w-full outline-none bg-transparent border-slate-500 border-2 text-slate-300 p-2 transition-[bg] duration-250 ease-in-out focus:bg-slate-600 rounded-lg"
+            >
+              <option value="U" {{'selected' if form['residence_type'] == 'U' or not form}}>Urban</option>
+              <option value="R" {{'selected' if form['residence_type'] == 'R'}}>Rural</option>
+            </select>
+          </label>
+          <button
+            type="submit"
+            class="bg-slate-600 text-slate-200 hover:bg-slate-500 rounded-lg shadow-xl p-2 transition-[bg] duration-250 ease-in-out w-full"
+          >
+            Submit
+          </button>
+          {% if prediction %}
+          <h2 class="text-center text-xl text-slate-200">
+            Predicted chance of getting stroke is {{prediction}}
+          </h2>
+          {% endif %}
+        </form>
+      </div>
+    </main>
+    <script>
+      const prediction = "{{prediction}}";
+      console.log(prediction)
+      if (prediction.length > 0) {
+        window.scrollTo(0, document.body.scrollHeight);
+      }
+    </script>
+  </body>
+</html>
