@@ -608,10 +608,6 @@ video {
   width: 100%;
 }
 
-.max-w-xl {
-  max-width: 36rem;
-}
-
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -783,10 +779,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:text-start {
-    text-align: start;
-  }
-
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
